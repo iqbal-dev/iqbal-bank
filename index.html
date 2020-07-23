@@ -101,13 +101,9 @@
             const withdraw = document.getElementById('withdraw')
             withdraw.addEventListener('click',function(){
                 const withdrawNumber = getInput('withdrawAmount')
-                update('currentWithdraw',withdrawNumber)
-                document.getElementById('withdrawAmount').value = ""
-
-                const currentBalance = document.getElementById('balanceAmount').innerText;
-                const currentBalanceNumber = parseFloat(currentBalance);
-                const totalBalance = currentBalanceNumber - withdrawNumber;
-                document.getElementById('balanceAmount').innerText = totalBalance;
+                update('currentWithdraw',withdrawNumber);
+                update('balanceAmount', -1*withdrawNumber)
+                document.getElementById('withdrawAmount').value = "";
             })
     </script>
 </body>
